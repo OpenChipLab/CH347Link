@@ -12,7 +12,7 @@
   - CH347DLL.DLL         南京沁恒微电子有限公司（WCH）的专有厂商接口库。该文件不属
                          于本项目软件的一部分，不由下方 BSD 许可证覆盖；其版权归
                          WCH 所有并按 WCH 自身的许可条款提供。建议从 WCH 官方网站
-                         （https://www.wch-ic.com/）获取最新的驱动包及该 DLL。
+                         (https://wch.cn/)获取最新的驱动包及该 DLL。
   - KeilCh347Installer.exe 本项目的图形化安装程序。
 
 由于本项目采用 CMSIS-DAP 相关标准，任何使用本项目的用户同时也需要同意 CMSIS-DAP
@@ -26,7 +26,7 @@ Arm、Keil 和 µVision 是 Arm Limited（或其子公司）在美国和/或其�
 版权声明：
 
     Copyright (c) 2022, windowsair —— 原始项目 elaphureLink
-    Copyright (c) 2026, CH347Link contributors —— 对本项目的修改
+    Copyright (c) 2026, OpenChipLab —— 对本项目的修改
 
 本许可声明应包含在本软件的所有副本或主要部分中。
 
@@ -36,7 +36,7 @@ BSD 2-Clause License
 
 ```
 Copyright (c) 2022, windowsair (elaphureLink)
-Copyright (c) 2026, CH347Link contributors (modifications)
+Copyright (c) 2026, OpenChipLab (modifications)
 All rights reserved.
 
 Redistribution and use in source and binary forms, with or without
