@@ -36,7 +36,7 @@ CH347 设备  ──SWD / JTAG──►  目标 MCU (Cortex-M)
 - **SWD / JTAG**：可在 Keil 的 Debug Settings 中切换端口。
 - **调试规范**：ADIv5；支持 ARMv6-M、ARMv7-M、ARMv8-M（继承自上游）。
 - **完整调试能力**：断点、单步、寄存器 / 内存 / 外设查看，以及基于 Keil 标准 Flash 算法流程的下载和擦除。
-- **系统复位**：支持 SRST 硬件复位；AutoDetect 复位未生效时可回退到 `SYSRESETREQ` 软件复位。
+- **系统复位**：AutoDetect 会先探测 SRST 是否真正产生硬件复位；有效时使用硬件复位，未接 nSRST 时回退到 `SYSRESETREQ` 软件复位。
 - **可调时钟**：SWD 支持 100 kHz – 5 MHz；JTAG 最高可达 60 MHz。
 - **多设备区分**：插入多个 CH347 时，可通过设备 SN 区分。
 - **图形化安装**：自动定位 Keil、备份并修改 `TOOLS.INI`，随后复制驱动文件。
@@ -120,6 +120,8 @@ CH347 设备  ──SWD / JTAG──►  目标 MCU (Cortex-M)
 | JTAG | `TMS`、`TCK`、`TDI`、`TDO`、`GND`，以及可选的 `nSRST` |
 
 确认 CH347 与目标板共地，并给目标板正常供电。
+
+> Autodetect 会先发送一次 SRST 探测脉冲。若 nSRST 已连接并检测到硬件复位，将继续使用硬件复位；若未连接或未检测到复位，则自动回退到 `SYSRESETREQ`。显式选择 HW RESET、SYSRESETREQ 或 VECTRESET 时，按所选方式执行。
 
 ### Keil 配置
 
